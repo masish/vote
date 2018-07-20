@@ -1,0 +1,35 @@
+    <!-- コンテンツ -->
+    <div class="main">
+      <h2>ユーザー登録</h2>
+        <div class="userForm">
+          <form #myForm="ngForm" (ngSubmit)="add()" novalidate>
+              <ul>
+                  <li class="username">
+                      <label for="username">Name</label>
+                      <input id="username" name="username" type="text" [(ngModel)]="user.username" required #username="ngModel" placeholder="Your Name">
+                      <span *ngIf="username.errors?.required && username.dirty">Nameは必須です。</span>
+                  </li>
+                  <li class="email">
+                      <label for="email">Email</label>
+                      <input id="email" name="email" type="text" [(ngModel)]="user.email" required email #email="ngModel" placeholder="sample@test.com">
+                      <span *ngIf="email.errors?.required && email.dirty">Emailは必須です。</span>
+                      <span *ngIf="email.errors?.email && email.dirty">メールアドレスが不正です。</span>
+                  </li>
+                  <li class="password">
+                      <label for="password">Password</label>
+                      <input id="password" type="password" name="password" [(ngModel)]="user.password" required #password="ngModel" class="demo2_2">
+                      <span *ngIf="password.errors?.required && password.dirty">パスワードは必須です。</span>
+                  </li>
+                  <li><input id="button" type="submit" name="button" value="Regist Now!" [disabled]="myForm.invalid"></li>
+              </ul>
+          </form>
+        </div>
+    </div>
+
+    <!-- //コンテンツ -->
+
+    <!-- 共通フッター -->
+    <div class="footer">
+
+    </div>
+    <!-- //共通フッター -->

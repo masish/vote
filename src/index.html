@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="JP">
+<head>
+  <meta charset="utf-8">
+  <title>Vote</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js?ver=3.8.1"></script>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!--[if lt IE 9]>
+    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+  <![endif]-->
+  <script type="text/javascript">
+    $(function(){
+      $("#toggle").click(function(){
+        $("#menu").slideToggle();
+        return false;
+      });
+      $(window).resize(function(){
+        var win = $(window).width();
+        var p = 480;
+        if(win > p){
+          $("#menu").show();
+        }
+      });
+    });
+  </script>
+</head>
+  <body>
+    <app-root></app-root>
+  </body>
+</html>
